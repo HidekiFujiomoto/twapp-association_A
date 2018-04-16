@@ -1,0 +1,49 @@
+
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+              <span class="sr-only">TwitterClone</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">TwitterClone</a>
+          </div>
+
+          <div id="gnavi" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/mutters/new">新規投稿</a></li>
+              <li><a href="/mutters">つぶやき一覧</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <div class="content">
+
+        <div class="notice">
+          <p></p>
+        </div>
+
+        <div class="page_title">
+          <h2>新規投稿</h2>
+        </div>
+
+        <div class="main_content">
+          <%= render 'form' %>
+        </div>
+
+      </div> <!--End of container-->
+
+      <footer class="footer">
+        <p>Hideki Fujimoto test application</p>
+      </footer>
+    </div>
+  </body>

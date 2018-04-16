@@ -1,0 +1,29 @@
+<div class="input_content">
+  <%= form_with(model: @mutter, local: true, url: choose_new_or_edit) do |form| %>
+    <% if @mutter.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @mutter.errors.count %>件のエラーがあります。</h2>
+        <ul>
+
+        <% @mutter.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="mutter_content">
+      <%= form.label "いまどうしてる？" %><br>
+      <%= form.text_field :content %>
+    </div>
+
+    <div>
+      <%= form.submit "投稿する", class:"btn btn-default "%>
+    </div>
+  <% end %>
+</div>
+
+<div class="return_index">
+  <%= link_to 'つぶやき一覧画面にもどる', mutters_path %>
+</div

@@ -1,0 +1,70 @@
+
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+              <span class="sr-only">TwitterClone</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">TwitterClone</a>
+          </div>
+
+          <div id="gnavi" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/mutters/new">新規投稿</a></li>
+              <li><a href="/mutters">つぶやき一覧</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+      <div class="content">
+
+        <div class="notice">
+          <p></p>
+        </div>
+
+        <div class="page_title">
+          <h2>以下の内容で投稿しますか？</h2>
+        </div>
+
+        <div class="main_content">
+          <%= form_with(model: @mutter, url: mutters_path, local: true) do |form| %>
+            <%= form.hidden_field :content %>
+
+            <div class="confirm_content">
+              <label>投稿内容</label>
+              <div class="entry_content">
+                <%= @mutter.content %>
+              </div>
+              <div class="btn-group">
+                <%= form.submit  "投稿する",class:"btn btn-default" %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="return_content">
+            <%= form_with(model: @mutter, url: new_mutter_path, local: true, method: 'get') do |form| %>
+              <%= form.hidden_field :content %>
+              <div class="btn-group">
+                <%= form.submit "もどる", name: 'back',class:"btn btn-default" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      </div> <!--End of container-->
+
+      <footer class="footer">
+        <p>Hideki Fujimoto test application</p>
+      </footer>
+    </div>
+  </body>
