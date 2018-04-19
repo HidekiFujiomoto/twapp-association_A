@@ -1,0 +1,73 @@
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">TwitterClone</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+
+      <section>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </section>
+
+      <section>
+        <h3>新規登録</h3>
+          <%= form_with(model: @user, local: true) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %><br>
+            <%= f.label :email %>
+            <%= f.email_field :email %><br>
+            <%= f.label :password %>
+            <%= f.password_field :password %><br>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation %><br>
+            <%= f.submit "Create my account" %>
+          <% end %>
+        <!---
+        <table>
+          <%= form_with(model: @user, local: true) do |f| %>
+          <tr>
+            <th><%= f.label :name %></th>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :email %></th>
+            <td><%= f.email_field :email %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :password %></th>
+            <td><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :password_confirmation %></th>
+            <td><%= f.password_field :password_confirmation %></td>
+          </tr>
+          <tr><td>
+            <%= f.submit "Create my account" %></td></tr>
+          <% end %>
+        </table>
+        --->
+      </section>
+
+    </div> <!--End of content-->
+
+    <footer class="footer">
+      <p>Hideki Fujimoto test application</p>
+    </footer>
+  </div>
+</body>

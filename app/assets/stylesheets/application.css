@@ -14,3 +14,16 @@
  *= require_tree .
  *= require_self
  */
+
+.error_msg{
+  padding-top: 20px;
+  color: #ff0000;}
+
+.head_msg{
+  padding-top: 30px;}
+
+.text_left{
+  float: left; }
+
+.text_right{
+  text-align: right; }

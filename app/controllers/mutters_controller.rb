@@ -1,7 +1,7 @@
 class MuttersController < ApplicationController
 
   before_action :set_mutter, only: [:edit, :update, :destroy]
-  
+
   def index
     @mutters = Mutter.all
   end

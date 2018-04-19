@@ -7,15 +7,17 @@
         <div class="container-fluid">
 
           <div class="navbar-header">
+            <!---
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
               <span class="sr-only">TwitterClone</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">TwitterClone</a>
+            --->
+            <a class="navbar-brand" href="/">TwitterClone</a>
           </div>
-
+          <!---
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li><a href="/">Home</a></li>
@@ -23,10 +25,9 @@
               <li><a href="/mutters">つぶやき一覧</a></li>
             </ul>
           </div>
-
+          --->
         </div>
       </nav>
-
 
       <div class="content">
         <section>
@@ -37,6 +38,19 @@
           <h3>このアプリケーションについて</h3>
           <p>TwitterClone...140文字でいまの状況を伝えられる...<br>
             ツイッターを真似したテストアプリです。</p>
+        </section>
+
+        <section class="btn-group btn-group-justified" role="group">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">
+              <%= link_to "Sign up", new_user_path %>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">
+              <%= link_to "Login", new_session_path %>
+            </button>
+          </div>
         </section>
 
       </div> <!--End of content-->

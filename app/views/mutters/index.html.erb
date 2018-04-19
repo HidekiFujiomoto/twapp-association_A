@@ -12,12 +12,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">TwitterClone</a>
+            <%= link_to "TwitterClone", user_path(current_user.id), class: "navbar-brand" %>
           </div>
 
           <div id="gnavi" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
               <li><a href="/mutters/new">新規投稿</a></li>
               <li><a href="/mutters">つぶやき一覧</a></li>
             </ul>
@@ -28,9 +27,11 @@
 
       <div class="content">
 
+        <!---
         <div class="notice">
           <p><%= notice %></p>
         </div>
+        --->
 
         <div class="page_title">
           <h2>つぶやき一覧</h2>

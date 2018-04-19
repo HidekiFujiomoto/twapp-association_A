@@ -1,0 +1,43 @@
+
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">TwitterClone</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h3>Log in</h3>
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %><br>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
+        <%= f.submit "Log in" %>
+        <% end %>
+      <!---
+      <table>
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <tr>
+          <th><%= f.label :email %></th>
+          <td><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :password %></th>
+          <td><%= f.password_field :password %></td>
+        </tr>
+      </table>
+        <%= f.submit "Log in" %>
+        <% end %>
+        --->
+    </div><!--End of content-->
+
+    <footer class="footer">
+      <p>Hideki Fujimoto test application</p>
+    </footer>
+  </div><!--End of container-->
+</body>

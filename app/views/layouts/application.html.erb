@@ -9,6 +9,27 @@
   </head>
 
   <body>
+    <div class="container">
+      <div class="error_msg">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+      </div>
+
+      <div class="head_msg">
+        <% if logged_in? %>
+          <p class="text_left"><%= link_to "Home", user_path(current_user.id) %></p>
+          <p class="text_right"><%= link_to "Logout", session_path(current_user.id), method: :delete %></p>
+        <% else %>
+          <p class="text_left">ログインしてください</p>
+          <!---
+          <%= link_to "Sign up", new_user_path %>
+          <%= link_to "Login", new_session_path %>
+          --->
+        <% end %>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
