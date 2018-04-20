@@ -7,10 +7,15 @@ class MuttersController < ApplicationController
   end
 
   def new
-    if params[:back]
-      @mutter = Mutter.new(mutter_params)
+    if logged_in?
+      if params[:back]
+        @mutter = Mutter.new(mutter_params)
+        session[:user_id] = @mutter.id
+      else
+        @mutter = Mutter.new
+      end
     else
-      @mutter = Mutter.new
+      redirect_to new_session_path
     end
   end
 
@@ -24,6 +29,19 @@ class MuttersController < ApplicationController
   end
 
   def edit
+    if logged_in?
+    else
+      redirect_to new_session_path
+    end
+  end
+
+  def show
+    if logged_in?
+      @mutter = Mutter.new(mutter_params)
+      session[:user_id] = @mutter.id
+    else
+      redirect_to new_session_path
+    end
   end
 
   def update
