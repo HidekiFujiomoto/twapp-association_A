@@ -7786,3 +7786,143 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 51ms (Views: 44.9ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/mutters/28" for 127.0.0.1 at 2018-04-20 11:55:09 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Completed 400 Bad Request in 22ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mutter):
+  
+app/controllers/mutters_controller.rb:69:in `mutter_params'
+app/controllers/mutters_controller.rb:40:in `show'
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-20 11:55:16 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (11.0ms)
+  Rendered mutters/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 259ms (Views: 237.5ms | ActiveRecord: 10.6ms)
+
+
+Started DELETE "/sessions/28" for 127.0.0.1 at 2018-04-20 11:55:21 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B5hjS+/lNuViLXMKTXLsV3W4wPd0/SMEyP1XItBozPl9TsHAZ6huYdMLMqvdhODum096e/ELEeSohz8Xd2dlJg==", "id"=>"28"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-04-20 11:55:21 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters/28" for 127.0.0.1 at 2018-04-20 11:55:27 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-04-20 11:55:27 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters/28/edit" for 127.0.0.1 at 2018-04-20 11:55:36 +0900
+Processing by MuttersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=28):
+  
+app/controllers/mutters_controller.rb:73:in `set_mutter'
+Started GET "/mutters/28/edit" for 127.0.0.1 at 2018-04-20 11:56:17 +0900
+Processing by MuttersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mMutter Load (0.1ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=28):
+  
+app/controllers/mutters_controller.rb:74:in `set_mutter'
+Started GET "/mutters/3/edit" for 127.0.0.1 at 2018-04-20 11:56:36 +0900
+Processing by MuttersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=3):
+  
+app/controllers/mutters_controller.rb:74:in `set_mutter'
+Started GET "/mutters/3/edit" for 127.0.0.1 at 2018-04-20 11:57:03 +0900
+Processing by MuttersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMutter Load (0.1ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=3):
+  
+app/controllers/mutters_controller.rb:73:in `set_mutter'
+Started GET "/mutters/1" for 127.0.0.1 at 2018-04-20 11:57:08 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-04-20 11:57:08 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters/1" for 127.0.0.1 at 2018-04-20 11:57:21 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-04-20 11:57:21 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters/1/edit" for 127.0.0.1 at 2018-04-20 11:57:22 +0900
+Processing by MuttersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=1):
+  
+app/controllers/mutters_controller.rb:73:in `set_mutter'

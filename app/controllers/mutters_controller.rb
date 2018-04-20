@@ -30,6 +30,7 @@ class MuttersController < ApplicationController
 
   def edit
     if logged_in?
+      @mutter = Mutter.new(mutter_params)
     else
       redirect_to new_session_path
     end
@@ -38,7 +39,6 @@ class MuttersController < ApplicationController
   def show
     if logged_in?
       @mutter = Mutter.new(mutter_params)
-      session[:user_id] = @mutter.id
     else
       redirect_to new_session_path
     end
