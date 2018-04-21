@@ -40,6 +40,8 @@ class MuttersController < ApplicationController
     @mutter = Mutter.new(mutter_params)
     @mutter.id = current_user.id
     render :new if @mutter.invalid?
+    #  
+
   end
 
   def edit
