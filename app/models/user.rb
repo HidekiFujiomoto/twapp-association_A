@@ -5,4 +5,9 @@ class User < ApplicationRecord
   before_save { email.downcase! }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  # アソシエーション設定一対多の一側
+  has_many :mutters, dependent: :destroy
+  # アソシエーション設定多対多の多側
+  has_many :favorites, dependent: :destroy
 end

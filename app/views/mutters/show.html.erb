@@ -1,0 +1,7 @@
+<% unless @mutter.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(mutter_id: @mutter.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(mutter_id: @mutter.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
