@@ -13598,3 +13598,44 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-24 16:07:18 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (9.6ms)
+  Rendered mutters/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 270ms (Views: 228.7ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-24 16:07:22 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v1ownVuOIxLktG38zJKBJn4fenYXx3agWcjslhaLx9HFjJIW08N7llWSLF1cZI2fkOjA+pIxREA5soSjsYRuDg==", "mutter"=>{"content"=>"テスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 69ms (Views: 42.4ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-24 16:07:27 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P/RTNkwdtVMZ5umIIuXoJW+5iWrw5cGIcFxFEh8/CCBFIvG9xFDt16jAqCmyE+ScgU4z5nUT82gQJi0nuDCh/w==", "mutter"=>{"content"=>"テスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "テスト"], ["user_id", "33"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 302 Found in 14ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-24 16:07:27 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.6ms)
+
+
