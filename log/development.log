@@ -13379,3 +13379,222 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-24 15:52:57 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 386ms (Views: 368.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/32" for 127.0.0.1 at 2018-04-24 15:53:01 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 32]]
+  Rendered users/show.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 127ms (Views: 70.8ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-24 15:53:06 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions/32" for 127.0.0.1 at 2018-04-24 15:53:09 +0900
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nNmf0MpAjgIaEt67qPyX0abRWzVPzMldUuo2OnT5gPfmDz1bQg3Whqs0nxo4CptoSCbhuco6+70ykF4P0/YpKA==", "id"=>"32"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-04-24 15:53:09 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-24 15:53:14 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-24 15:54:58 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-24 15:55:10 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0WTlmhfIo11UMyNyS2zAu59WQNqg8Tn1flMTCzbQDQg2fyua16gQm59xneofVl47uOJWTSBcFFmQnxMFmKN84A==", "user"=>{"name"=>"hideki", "email"=>"kurosirobeagle@yahoo.cooom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hideki"], ["email", "kurosirobeagle@yahoo.cooom"], ["password_digest", "$2a$10$.1187ViSmP.ml0njBYenMueUq80/6Y0cHcjbF4B/feKWhVOHj9NG6"], ["created_at", "2018-04-24 06:55:10.834074"], ["updated_at", "2018-04-24 06:55:10.834074"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/33
+Completed 302 Found in 68ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/users/33" for 127.0.0.1 at 2018-04-24 15:55:10 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 33]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 41.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-24 15:55:12 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-24 15:55:13 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.8ms)
+  Rendered mutters/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-24 15:55:17 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+hiSApLYlbAccCRYiqXCCXPnsevRtO6e0vG5jViC8xe9K/LplVtkVgXfrUO/YAoFQqNe3NO0RBhH1/p/4/1x7Q==", "mutter"=>{"content"=>"1"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-24 15:55:18 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IBgmgvTxBFANlGStMc/frnDCJRFisTBEosI7xRQ24yNazoQJfLxc1LyyJQyhOdMXnjWfnedHAqTCuFPwszlK/A==", "mutter"=>{"content"=>"1"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "1"], ["user_id", "33"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 302 Found in 12ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-24 15:55:18 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mutters/18" for 127.0.0.1 at 2018-04-24 15:55:26 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."mutter_id" = $2 LIMIT $3[0m  [["user_id", 33], ["mutter_id", 18], ["LIMIT", 1]]
+  Rendering mutters/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendered mutters/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 66ms (Views: 56.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/mutters/17" for 127.0.0.1 at 2018-04-24 15:55:33 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mFavorite Load (2.6ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."mutter_id" = $2 LIMIT $3[0m  [["user_id", 33], ["mutter_id", 17], ["LIMIT", 1]]
+  Rendering mutters/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendered mutters/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 51ms (Views: 41.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/mutters/18" for 127.0.0.1 at 2018-04-24 15:55:37 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mFavorite Load (2.7ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."mutter_id" = $2 LIMIT $3[0m  [["user_id", 33], ["mutter_id", 18], ["LIMIT", 1]]
+  Rendering mutters/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendered mutters/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 58.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-24 15:55:39 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mutters/17" for 127.0.0.1 at 2018-04-24 15:55:42 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."mutter_id" = $2 LIMIT $3[0m  [["user_id", 33], ["mutter_id", 17], ["LIMIT", 1]]
+  Rendering mutters/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendered mutters/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 60ms (Views: 52.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/favorites?mutter_id=17" for 127.0.0.1 at 2018-04-24 15:55:43 +0900
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"R/sMN9SX4pOnWW60W5/LoslCHkZ9F3AmhcQv0GJrZF89La68XNq6FxZ/LxXLaccbJ7WkyvjhQsblvkflxWTNgA==", "mutter_id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "mutter_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 33], ["mutter_id", 17], ["created_at", "2018-04-24 06:55:43.642146"], ["updated_at", "2018-04-24 06:55:43.642146"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Redirected to http://localhost:3000/mutters
+Completed 302 Found in 20ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-24 15:55:43 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/33" for 127.0.0.1 at 2018-04-24 15:55:45 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.7ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 33]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 1.1ms)
+
+
