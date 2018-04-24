@@ -40,15 +40,23 @@
         <div class="main_content row">
           <table>
             <% @mutters.each do |mutter| %>
+              <tr class="tweet_content_top">
+                <td><%= link_to "詳細", mutter_path(mutter.id) =%></td>
+              </tr>
               <tr class="tweet_content">
                 <td><%= mutter.content %></td>
               </tr>
-              <tr class="content_buttom">
-                <td>
-                  <%= link_to "編集する", edit_mutter_path(mutter.id) ,class: "btn btn-default col-md-6 col-xs-12" %>
-                  <%= link_to '削除する', mutter_path(mutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } ,class: "btn btn-default col-md-6 col-xs-12" %>
-                </td>
-              </tr>
+              <% if mutter.user_id == @user_id %>
+                <tr class="content_buttom">
+                  <td>
+                    <%= link_to "編集する", edit_mutter_path(mutter.id) ,class: "btn btn-default col-md-6 col-xs-12" %>
+                    <%= link_to '削除する', mutter_path(mutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } ,class: "btn btn-default col-md-6 col-xs-12" %>
+                  </td>
+                </tr>
+              <% else %>
+                <tr></tr>
+              <% end %>
+
             <% end %>
           </table>
         </div>

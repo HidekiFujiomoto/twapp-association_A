@@ -44,6 +44,10 @@
   width:100%;
   border-collapse: collapse; }
 
+.tweet_content_top td{
+  margin-top: 15px;
+  float:right;}
+
 .tweet_content td{
   background-color: #fff;
   padding: 15px; }

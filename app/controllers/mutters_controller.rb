@@ -1,9 +1,16 @@
 class MuttersController < ApplicationController
 
-  before_action :set_mutter, only: [:edit, :update, :destroy]
+  before_action :set_mutter, only: [:edit, :update, :destroy, :show]
 
   def index
-    @mutters = Mutter.all
+    if logged_in?
+      # ログインしている場合の処理
+      @mutters = Mutter.all
+      @user_id = current_user.id.to_s
+    else
+      # ログインしていない場合の処理
+      redirect_to new_session_path
+    end
   end
 
   def new
@@ -23,14 +30,10 @@ class MuttersController < ApplicationController
   end
 
   def create
-    # Mutterテーブルのcontentカラムに新規追加 => @mutterへ代入
     @mutter = Mutter.new(mutter_params)
-    # 現在ログインしているuserのidをmutterのidカラムに代入
-    @mutter.id = current_user.id
-    # @mutterを保存しtrueの場合
+    @mutter.user_id = current_user.id
     if @mutter.save
       redirect_to mutters_path, notice: "つぶやきを投稿しました！"
-    # falseの場合は、新規投稿画面のまま
     else
       render 'new'
     end
@@ -38,9 +41,8 @@ class MuttersController < ApplicationController
 
   def confirm
     @mutter = Mutter.new(mutter_params)
-    @mutter.id = current_user.id
+    @mutter.user_id = current_user.id
     render :new if @mutter.invalid?
-    #  
 
   end
 
@@ -53,9 +55,8 @@ class MuttersController < ApplicationController
   end
 
   def show
-    @favorite = current_user.favorites.find_by(mutter_id: @mutter.id)
     if logged_in?
-      @mutter = Mutter.new(mutter_params)
+      @favorite = current_user.favorites.find_by(mutter_id: @mutter.id)
     else
       redirect_to new_session_path
     end
@@ -76,7 +77,7 @@ class MuttersController < ApplicationController
 
   private
   def mutter_params
-    params.require(:mutter).permit(:content, :user_id)
+    params.require(:mutter).permit(:content,:user_id)
   end
 
   def set_mutter

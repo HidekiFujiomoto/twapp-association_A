@@ -30,9 +30,10 @@
         </section>
 
         <section class="preamble">
-          <h3>このアプリケーションについて</h3>
-          <p>TwitterClone...140文字でいまの状況を伝えられる...<br>
-            ツイッターを真似したテストアプリです。</p>
+          <h3>あなたのお気に入り投稿</h3><br>
+          <% @favorites_mutters.each do |favorites_tweet| %>
+            <p><%= favorites_tweet.content %></p>
+          <% end %>
         </section>
 
       </div> <!--End of content-->

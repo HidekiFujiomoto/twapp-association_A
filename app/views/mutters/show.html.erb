@@ -1,7 +1,52 @@
-<% unless @mutter.user == current_user %>
-  <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(mutter_id: @mutter.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorites_path(mutter_id: @mutter.id), method: :post, class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+            <span class="sr-only">TwitterClone</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "TwitterClone", user_path(current_user.id), class: "navbar-brand" %>
+        </div>
+
+        <div id="gnavi" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/mutters/new">新規投稿</a></li>
+            <li><a href="/mutters">つぶやき一覧</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="content">
+
+      <% unless @mutter.user == current_user %>
+        <% if @favorite.present? %>
+          <p>以下投稿をお気に入りから解除しますか？<p>
+            <br>
+            <p><%= @mutter.content %></p>
+            <br>
+          <%= link_to 'お気に入り解除する', favorite_path(mutter_id: @mutter.id), method: :delete, class: 'btn btn-danger' %>
+        <% else %>
+          <p>以下投稿をお気に入りに登録しますか？<p>
+            <br>
+            <p><%= @mutter.content %></p>
+            <br>
+          <%= link_to 'お気に入りする', favorites_path(mutter_id: @mutter.id), method: :post, class: 'btn btn-primary' %>
+        <% end %>
+
+      <% end %>
+
+    </div> <!--End of content-->
+
+<footer class="footer">
+  <p>Hideki Fujimoto test application</p>
+</footer>
+</div>
+</body>

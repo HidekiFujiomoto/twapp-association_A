@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     session[:user_id] = @user.id
+    @favorites_mutters = @user.favorites_mutters
   end
 
   private
