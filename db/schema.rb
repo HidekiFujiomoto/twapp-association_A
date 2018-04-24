@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424073727) do
+ActiveRecord::Schema.define(version: 20180424080814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180424073727) do
 
   create_table "mutters", force: :cascade do |t|
     t.text "content"
-    t.text "user_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

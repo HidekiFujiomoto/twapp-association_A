@@ -6,7 +6,7 @@ class MuttersController < ApplicationController
     if logged_in?
       # ログインしている場合の処理
       @mutters = Mutter.all
-      @user_id = current_user.id.to_s
+      @user_id = current_user.id
     else
       # ログインしていない場合の処理
       redirect_to new_session_path
