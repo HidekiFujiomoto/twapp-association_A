@@ -15527,3 +15527,2483 @@ Processing by ContactsController#show as HTML
 Completed 200 OK in 143ms (Views: 105.6ms | ActiveRecord: 31.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-25 20:25:11 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 379ms (Views: 364.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-25 20:25:16 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 131ms (Views: 90.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:25:18 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:31:12 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 58ms (Views: 54.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:31:14 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:31:19 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 66.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:31:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:31:52 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:32:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:32:44 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 73ms (Views: 45.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-25 20:32:46 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 59ms (Views: 47.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-25 20:32:48 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (354.3ms)
+  Rendered mutters/new.html.erb within layouts/application (357.5ms)
+Completed 200 OK in 398ms (Views: 391.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:32:49 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (1.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 77ms (Views: 62.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:32:51 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:33:06 +0900
+  
+ActionController::RoutingError (uninitialized constant ContactController):
+  
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:33:20 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 68ms (Views: 47.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:34:13 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:34:24 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 69ms (Views: 39.9ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/contact/new" for 127.0.0.1 at 2018-04-25 20:34:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/contact/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:34:51 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 63ms (Views: 55.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:34:55 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:35:00 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (4.6ms)
+  Rendered contacts/new.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 60.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:35:03 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (4.2ms)
+  Rendered contacts/new.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 73.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:35:27 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (3.7ms)
+  Rendered contacts/new.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 90.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:37:19 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (1.8ms)
+  Rendered contacts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:38:59 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (1.8ms)
+  Rendered contacts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:39:26 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (1.9ms)
+  Rendered contacts/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 109ms (Views: 106.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:39:49 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (2.6ms)
+  Rendered contacts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 90ms (Views: 88.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2018-04-25 20:40:31 +0900
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nn18ftvzHL9tDGsZe3WXeM3iYgnH7eTCtf/45VJXrOvkq971U75EO9wqKrjrg5vBIxXYhUIb1iLVhZDQ9VgFNA==", "contact"=>{"name"=>"heroku", "email"=>"kurosirobeagle@yahoo.bb", "content"=>"twappテスト"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "heroku"], ["email", "kurosirobeagle@yahoo.bb"], ["content", "twappテスト"], ["created_at", "2018-04-25 11:40:31.219901"], ["updated_at", "2018-04-25 11:40:31.219901"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.9ms)
+ContactMailer#contact_mail: processed outbound mail in 356.4ms
+Sent mail to kurosirobeagle@yahoo.co.jp (11.9ms)
+Date: Wed, 25 Apr 2018 20:40:31 +0900
+From: from@example.com
+To: kurosirobeagle@yahoo.co.jp
+Message-ID: <5ae0692fb713f_911a3fc4318e2c88555e5@HidekinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=81=AE=E7=A2=BA=E8=AA=8D=E3=83=A1=E3=83=BC=E3=83=AB?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgaHR0
+cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo
+YXJzZXQ9dXRmLTgiIC8+CiAgICA8c3R5bGU+CiAgICAgIC8qIEVtYWlsIHN0
+eWxlcyBuZWVkIHRvIGJlIGlubGluZSAqLwogICAgPC9zdHlsZT4KICA8L2hl
+YWQ+CgogIDxib2R5PgogICAgPGgxPuOBiuWVj+OBhOWQiOOCj+OBm+OBjOWu
+jOS6huOBl+OBvuOBl+OBn++8gTwvaDE+Cgo8aDQ+bmFtZTogaGVyb2t1PC9o
+ND4KCjxoND7jgYrllY/jgYTlkIjjgo/jgZvlhoXlrrnjga7norroqo08L2g0
+PgoKPHA+Y29udGVudDogdHdhcHDjg4bjgrnjg4g8L3A+CgogIDwvYm9keT4K
+PC9odG1sPgo=
+
+Redirected to http://localhost:3000/contacts/2
+Completed 302 Found in 551ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/contacts/2" for 127.0.0.1 at 2018-04-25 20:40:31 +0900
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  Rendered contacts/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 156ms (Views: 134.4ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:42:16 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:42:18 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (2.9ms)
+  Rendered contacts/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 74ms (Views: 70.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:43:21 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:43:23 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (1.9ms)
+  Rendered contacts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 63ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:43:25 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (4.1ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 72ms (Views: 62.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:43:26 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (3.7ms)
+  Rendered contacts/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 72ms (Views: 67.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:43:27 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (5.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 65ms (Views: 55.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-25 20:43:51 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-25 20:43:53 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.5ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 79ms (Views: 66.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:43:55 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 57.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:43:56 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (2.1ms)
+  Rendered contacts/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:43:58 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (5.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 87ms (Views: 77.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:44:02 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (3.7ms)
+  Rendered contacts/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 102ms (Views: 96.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:44:07 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 84ms (Views: 77.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:44:08 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (3.6ms)
+  Rendered contacts/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 79ms (Views: 73.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:44:09 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (4.6ms)
+  Rendered contacts/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:44:11 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (2.6ms)
+  Rendered contacts/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:44:16 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (6.9ms)
+  Rendered contacts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-25 20:45:18 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (1.6ms)
+  Rendered mutters/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:45:19 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (1.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 91ms (Views: 86.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-25 20:45:20 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (5.3ms)
+  Rendered contacts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:45:21 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (2.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 66ms (Views: 53.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-25 20:45:28 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.5ms)
+  Rendered mutters/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 83ms (Views: 77.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-25 20:48:27 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uuKcmeTlK4MXIorYQp10tmYBYARL71wBDYWUKL+o6DD90fxy42baZQ6NA8N3WLy6V0WPM0nv9oeYo9faBNdqyg==", "mutter"=>{"content"=>"Mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 86ms (Views: 42.8ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-25 20:49:07 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvd7YYXxefZceyNP9OjuU7xAqfRAC0r9d1LIzTZfkUH0IdnqDbwhcu1dYu5kHuLqUrcTeMX9eB0XKKD4kVA4ng==", "mutter"=>{"content"=>"Mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "Mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 302 Found in 11ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 20:49:07 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:16:54 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 39.0ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:17:40 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:21:33 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (1.5ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 51ms (Views: 44.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:22:59 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.7ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.8ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 71ms (Views: 59.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:22:59 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (3.5ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (1.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:23:03 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (2.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (1.1ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 76ms (Views: 67.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:23:37 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (3.9ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 85ms (Views: 75.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:24:03 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 77ms (Views: 50.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:24:20 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 91ms (Views: 61.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:25:14 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 82ms (Views: 51.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:28:27 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 51.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:29:15 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 22ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mutter):
+  
+app/controllers/mutters_controller.rb:82:in `mutter_params'
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters/confirm" for 127.0.0.1 at 2018-04-25 21:29:19 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=confirm):
+  
+app/controllers/mutters_controller.rb:86:in `set_mutter'
+Started GET "/mutters/confirm" for 127.0.0.1 at 2018-04-25 21:29:35 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=confirm):
+  
+app/controllers/mutters_controller.rb:86:in `set_mutter'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:29:46 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 71ms (Views: 38.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:29:48 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 49.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:30:04 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `email' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:30:18 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters/confirm" for 127.0.0.1 at 2018-04-25 21:30:32 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=confirm):
+  
+app/controllers/mutters_controller.rb:86:in `set_mutter'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:30:35 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `email' for #<Class:0x007f88687a17f8>):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:30:44 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `email' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:30:55 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 69ms (Views: 42.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:31:27 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 2.6ms)
+
+
+  
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `mutter' for #<MuttersController:0x007f88696148a8>
+Did you mean?  mutter_url
+               @mutters):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:32:13 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 3.3ms)
+
+
+  
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `users' for #<MuttersController:0x007f88634ac4d0>
+Did you mean?  users_url):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:37:13 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.1ms)
+
+
+  
+  [1m[36mCACHE Mutter Load (0.0ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `users' for #<MuttersController:0x007f8868090b80>
+Did you mean?  users_url):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:37:21 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 61ms (Views: 36.4ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:39:00 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.3ms)
+
+
+  
+NoMethodError (undefined method `user' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:39:45 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `user' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:39:57 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:40:11 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  Rendered mutters/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+    36: 
+    37:         <div>
+    38:           <p>email取得テスト</p>
+    39:           <%= @mutter.user.email %><br>
+    40:           <%= @user_id %>
+    41:         </div>
+    42: 
+  
+app/views/mutters/index.html.erb:39:in `_app_views_mutters_index_html_erb___2463021428579390896_70111859621140'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:40:41 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  Rendered mutters/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    36: 
+    37:         <div>
+    38:           <p>email取得テスト</p>
+    39:           <%= @mutter.users.email %><br>
+    40:           <%= @user_id %>
+    41:         </div>
+    42: 
+  
+app/views/mutters/index.html.erb:39:in `_app_views_mutters_index_html_erb___2463021428579390896_70111921247600'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-25 21:40:49 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered mutters/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Mutter::ActiveRecord_Relation:0x007f886a910290>):
+    36: 
+    37:         <div>
+    38:           <p>email取得テスト</p>
+    39:           <%= @mutters.user.email %><br>
+    40:           <%= @user_id %>
+    41:         </div>
+    42: 
+  
+app/views/mutters/index.html.erb:39:in `_app_views_mutters_index_html_erb___2463021428579390896_70111921018780'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:28:48 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 28.0ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2018-04-26 09:28:51 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-26 09:28:54 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 82ms (Views: 63.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:28:56 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:29:04 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:30:28 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:30:42 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `first' for nil:NilClass):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:31:09 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.6ms)
+
+
+  
+NameError (uninitialized constant MuttersController::Muter):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:31:17 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered mutters/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Mutter::ActiveRecord_Relation:0x007f88674a1f68>):
+    36: 
+    37:         <div>
+    38:           <p>email取得テスト</p>
+    39:           <%= @mutters.user.email %><br>
+    40:           <%= @user_id %>
+    41:         </div>
+    42: 
+  
+app/views/mutters/index.html.erb:39:in `_app_views_mutters_index_html_erb___2463021428579390896_70111897016280'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:31:43 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" ORDER BY "mutters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 84ms (Views: 57.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:35:41 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:35:52 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:36:01 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 3.4ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:36:16 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `Mutter' for #<Class:0x007f886778cd40>):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:36:48 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:37:10 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `User' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:37:23 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `user_id' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:39:34 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `user_id' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:39:49 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 20ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: mutter):
+  
+app/controllers/mutters_controller.rb:82:in `mutter_params'
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-26 09:40:09 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 6.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2018-04-27 10:25:23 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 75.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 10:25:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 81ms (Views: 56.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:25:32 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `user_id' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:11:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:30:21 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `user_id' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:10:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:30:40 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `user_id' for Mutter(id: integer, content: text, user_id: integer):Class):
+  
+app/controllers/mutters_controller.rb:10:in `index'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:31:05 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 69ms (Views: 37.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:31:12 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 76ms (Views: 45.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:31:19 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 38.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:34:40 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+
+  
+NameError (uninitialized constant MuttersController::Blog):
+  
+app/controllers/mutters_controller.rb:10:in `index'
+  [1m[36mMutter Load (0.6ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  [1m[36mMutter Load (0.5ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:47:12 +0900
+  [1m[35m (13.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered mutters/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 458ms (Views: 413.9ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:47:37 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.5ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 77ms (Views: 62.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 10:47:40 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (523.9ms)
+  Rendered mutters/new.html.erb within layouts/application (526.9ms)
+Completed 200 OK in 580ms (Views: 567.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 10:47:51 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NCr16JEoJiuF1i35kB+T/0Ja5pihbLZqaVfmaO40tI1zGZUDlqvXzZx5pOKl2lvzcx4Jr6NsHOz8caWaVUs2dw==", "mutter"=>{"content"=>"4/27テスト投稿"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 10:47:52 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6qP3T2pDKsSlMtNgOotEUJWpUlBr4OVlZJjOeX0xiB6QdVXE4g5yQBQUksGqfUjpe17o3O4W14UE4qZM2j4hwQ==", "mutter"=>{"content"=>"4/27テスト投稿"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "4/27テスト投稿"], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 302 Found in 20ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:47:52 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:54:03 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 64ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 10:54:05 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.7ms)
+  Rendered mutters/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 73ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 10:54:17 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PQd1I8+5IcuQnT5M8XCxksixoj6zHzRyMGm6rnfiz596NBXIyDrQLYkyt1fEtXme+fVNCbEfnvSlT/lczJ1NZQ==", "mutter"=>{"content"=>"4/27mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 45.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 10:54:18 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8afV+cy8j9pl+d447fdFkEJ0KX92NpxV/BUV8P7J+OGLcXdyRPHXXtTfn5l9AUkprIOT8/PArrWcb33FWcZRPg==", "mutter"=>{"content"=>"4/27mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "4/27mailerテスト"], ["user_id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 3.4ms)
+
+
+  
+NoMethodError (undefined method `mail' for #<MuttersController:0x007f80145d2e60>):
+  
+app/controllers/mutters_controller.rb:34:in `create'
+Started GET "/mutters/confirm" for 127.0.0.1 at 2018-04-27 10:54:45 +0900
+Processing by MuttersController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT  "mutters".* FROM "mutters" WHERE "mutters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Mutter with 'id'=confirm):
+  
+app/controllers/mutters_controller.rb:82:in `set_mutter'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 10:54:49 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 84ms (Views: 57.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 10:54:51 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.8ms)
+  Rendered mutters/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 10:54:58 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iI2+w7zsjgmzZSJ7eENcGvcoZBFHiNaUBLOfJLYFuC7Pvt4ou29/76rKq2BNhpQWxmyLJkWIfBKRldzWDXo61A==", "mutter"=>{"content"=>"4/27mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 56ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 10:54:59 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVo163+FUGZWwomgIqPUYq6qFXoC14yFEMQOpRQJ+bg7jJdg98gI4ufkyAGyVdjbQF2v9ochvmVwvmaQswZQZw==", "mutter"=>{"content"=>"4/27mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "4/27mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 6.7ms)
+
+
+  
+NoMethodError (undefined method `mail' for #<MuttersController:0x007f801d606c70>):
+  
+app/controllers/mutters_controller.rb:34:in `create'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:07:46 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 288ms (Views: 243.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:07:51 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (429.8ms)
+  Rendered mutters/new.html.erb within layouts/application (433.5ms)
+Completed 200 OK in 509ms (Views: 478.5ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:07:57 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E4ULS8gSvoruuUTv8kfFJ45IfovwrdUhhj9sy+ZFGKZUtmugz5FPbPcWzfTHgg0rvwyRvPKtf6cTGS85XTqaXA==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 49.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:07:58 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXv2XzPHTBe3tkCmMavZIOx/H060Kx30kN7thgN9jcFLrVTUu4oUkwaQAQehXdWZAoilwjHdLxTwpIWzpHIkHg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 7.1ms)
+
+
+  
+SyntaxError (/Users/hidekifujimoto/ruby_workspace/twapp/app/mailers/tweetcreate_mailer.rb:6: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/mailers/tweetcreate_mailer.rb:6: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/mutters_controller.rb:32:in `create'
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:08:22 +0900
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:08:32 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXv2XzPHTBe3tkCmMavZIOx/H060Kx30kN7thgN9jcFLrVTUu4oUkwaQAQehXdWZAoilwjHdLxTwpIWzpHIkHg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 872ms (ActiveRecord: 6.5ms)
+
+
+  
+NameError (undefined local variable or method `mutter' for #<MuttersController:0x007f9a3414adb8>
+Did you mean?  @mutter):
+  
+app/controllers/mutters_controller.rb:32:in `create'
+Processing by MuttersController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:08:34 +0900
+Processing by TopsController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 68.3ms | ActiveRecord: 8.4ms)
+
+
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (2.5ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 375ms (Views: 274.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:08:37 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.5ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 104ms (Views: 65.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:08:38 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.2ms)
+  Rendered mutters/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 76ms (Views: 69.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:08:45 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bBnGwAOt27LhWUiFmJBPTqYeGPRGZRA2nalXBIYlubQrKqYrBC4qVPj2wZ6tVYdCl1r3w0RlurAIjxT2PVo7Tg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:08:46 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jGQOz02unDWuSqKRqnEXJECeLBvPjPS2Tyn9JJcWTJD2sqxExePEsR9s4zA6hxudrmmWl0p6xlYvU5URMBnlTw==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 6.2ms)
+
+
+  
+NameError (undefined local variable or method `mutter' for #<MuttersController:0x007f9a3d8b07c0>
+Did you mean?  @mutter):
+  
+app/controllers/mutters_controller.rb:32:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:11:31 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 50.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:11:33 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 75ms (Views: 46.2ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:11:34 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.1ms)
+  Rendered mutters/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 58ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:11:39 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m7LroTNk9pE/B3ts13IeQiB0IezzKXC+Xs2GElK/m4bcgYtKNOcHdyao8nfit9ZOETDO2/Ep2jjL68Xg6cAZfA==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:11:40 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RSXpDuutVjlLDrbRMCnTA7Bw5fP5Rvcb6Cn4Rr4kx6M/80uFY+AOvfoo93Cg39+6Xodff3ywxfuIU5BzGStufA==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 45.0ms
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:32:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:12:10 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:12:12 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 93ms (Views: 66.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:12:12 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.3ms)
+  Rendered mutters/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:12:19 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7GVG8xHhXIiHMqBzUaoBgCwzvcnmaxj6EsWmQ+c0R5kgvXwy8R0lDuzQ5r4g2AKMfQhwCWZBuV9bVVrtONT5A==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 46.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:12:20 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oA2ThNbCMTBmYH9ijPX+E13Grg0RuhVN6V8DgOG5GwDa2zEPXo9ptNdGPsMcA/KqszEUgZRMJ62JJWu1Rray3w==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 45.0ms
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:5:in `send_email'
+app/controllers/mutters_controller.rb:32:in `create'
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:12:44 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 62ms (Views: 43.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:12:46 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.6ms)
+  Rendered mutters/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:12:51 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4zY9lqjGyWAi7AcfoRBs5TirqADAA3aJgdaudORDueukBV19r0U4hjtDjgSU1aTpCe9HN8ID3A8U8O2GXzw7EQ==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 41.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:12:52 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nz9XEJtii7iAa77tHD72O6FjYhMYLZX6PqE/Jj6mv61N6fWbEy/TPDFN/0yMyPqCT5TYn53bpxpe21cTmakWcg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 0.8ms
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `user' for nil:NilClass):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:32:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:13:10 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 50.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:13:12 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 77ms (Views: 53.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:13:13 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (1.8ms)
+  Rendered mutters/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 60ms (Views: 53.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:13:19 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cv+F4XmeAfx4vNCtjlN1nsTmi1vFsK+nzlShGoHah1tNzOUKfh3wGmETWba7lr2S9aJkbMewBSFbcuLoOqUFoQ==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 56ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:13:20 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nbfDecgiwybm1hi/JD3Faov7kVNu7PZXHx2IrfUM+OgoH2Gb23TiCq9GcNsZvusRNhUychNgTk8Bh4XENuaPA==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 6.3ms)
+
+
+  
+SyntaxError (/Users/hidekifujimoto/ruby_workspace/twapp/app/mailers/tweetcreate_mailer.rb:2: formal argument cannot be an instance variable
+  def send_email(@mutter)
+                        ^):
+  
+app/mailers/tweetcreate_mailer.rb:2: formal argument cannot be an instance variable
+app/controllers/mutters_controller.rb:32:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:14:29 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:14:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 80ms (Views: 55.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:14:32 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.4ms)
+  Rendered mutters/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 74ms (Views: 66.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:14:36 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TWP8fyklbo5zsHUIrU0UP2ehER6qdL4jhevghmnqq3wKUJyULqafaGof/BOYiNwzVuX+Kah0FKUQzaN00pUphg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:14:37 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nE7oE/JdDrBi56LA/kzP+gBqhNp6zFxBrVCIpWs5y2HmmEqYehBWNNPB42FuusND7p0+Vv86bqHNKuCQzDZivg==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 38.8ms
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:14:54 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:14:56 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.4ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 76ms (Views: 50.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:14:57 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.5ms)
+  Rendered mutters/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:15:03 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ka117+OHEXlF2/t9+vtAoLKfC9c0lsfYvUMfF572ej5unhUE5ATgn1x0cmbPPoisg9vk4DaWbV4oZVzlJYn4xA==", "mutter"=>{"content"=>"mailereテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:15:04 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aTylVaho5dEkB6FYV5NKJMnSo4GGAFYlgx/X+tgJ6HUT6gfeICW9VZUh4PnHZUadJyUZDQP2ZMXjZb/PfwZBqg==", "mutter"=>{"content"=>"mailereテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailereテスト"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 42.4ms
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:15:30 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 68.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:15:32 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.5ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 77ms (Views: 52.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:15:33 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.3ms)
+  Rendered mutters/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 59ms (Views: 52.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:15:38 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z1J14R6wT0K/l74GX+6G9MCkJoOrx6dX6DzM4u6xnDOIYRUKGTO+pKY4Nx1qK0748eDJtKnHDdF9Go8QVc4eyQ==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:15:39 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qN7YkT8TqJ40+O4JVzKSZYBDkKpWf+aAGuYnE320wsbSCHoat17wGoXer6jHxJ7cbrQqJtOJ1GB6nE8m2rtrGQ==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 41.8ms
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:15:53 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:15:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 71ms (Views: 47.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:15:56 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.7ms)
+  Rendered mutters/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 78ms (Views: 72.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:16:02 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"80mJPr0tLZCSKfUjgnMRQTQe0HtdPjLaFPklvzrNcT+0eunVuq7cdouGfDi3ttlNBVo/TF8+mFyB32ZNgbLzxQ==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:16:03 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5f8ii25E9xduzpAoMbzrOCcUuW4M23Q91AyMcIcSVlCfKYAA5gmvk9/o0YmhSueByeMD4oktRt20duRFIB3/jw==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 41.5ms
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:17:53 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:17:54 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 80ms (Views: 59.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:17:54 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (1.8ms)
+  Rendered mutters/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 70ms (Views: 64.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:18:00 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38tkT3umB8cyWJ/eRJrZH8gx0d+DsSUwBM1bM/RZwvmY+ASkfCX2ISv3FsVxXxET+XU+6IGxj7aR6xjBTyZAAw==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:18:01 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAUnpZLS43pMSOa+OibCqrV/SQJvRlbruZvCSBjSekPG04UuGp+7/v1upx+q0M4TW4jzjuqwZAvZ4ap9v93TnA==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+TweetcreateMailer#send_email: processed outbound mail in 38.9ms
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template tweetcreate_mailer/send_email with "mailer". Searched in:
+  * "tweetcreate_mailer"
+):
+  
+app/mailers/tweetcreate_mailer.rb:4:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-27 11:21:19 +0900
+Processing by TopsController#index as HTML
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:21:21 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.2ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 71ms (Views: 49.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:21:22 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (4.3ms)
+  Rendered mutters/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:21:30 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sPDJezUeWZjO/euU/Yi4KO4Jt8ILVQkHP2i1kyX7e3n3w6mQMp2oftdSYo/ITXAk301Y9QlVo4GqTvZhnoT5gw==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:21:31 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bd3XcMcAlsdf6ImZJtI87C+Pc3gDzmSJvA0HQl3/zeB/C3X7T03OQ+7OyDi2JDBVwXjJ9IY4Vmncd293+vBkPw==", "mutter"=>{"content"=>"mailerテスト"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト"], ["user_id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+  Rendering tweetcreate_mailer/send_email.html.erb within layouts/mailer
+  Rendered tweetcreate_mailer/send_email.html.erb within layouts/mailer (0.5ms)
+TweetcreateMailer#send_email: processed outbound mail in 341.2ms
+Sent mail to kurosirobeagle@yahoo.co.jp (19.6ms)
+Date: Fri, 27 Apr 2018 11:21:31 +0900
+From: from@example.com
+To: kurosirobeagle@yahoo.co.jp
+Message-ID: <5ae2892bc7481_14b023fcd1b0e66e052719@HidekinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=81=A4=E3=81=B6=E3=82=84=E3=81=8D=E3=82=92=E6=8A=95=E7=A8=BF=E3=81=97=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=81=8C=E5=
+=AE=8C=E4=BA=86=E3=81=97=E3=81=BE=E3=81=97=E3=81=9F=EF=BC=81</h1>
+
+<h4>=E5=AE=9B=E5=85=88: kurosirobeagle@yahoo.co.jp</h4>
+
+  </body>
+</html>
+
+Completed 302 Found in 384ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:21:31 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (5.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 162ms (Views: 149.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:23:52 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.2ms)
+  Rendered mutters/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 76ms (Views: 48.1ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:24:01 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"te7unsAD1UngKa8zfAvBGYnDffFyKrDxOZYYUcGGYVTy3Y51x4Akr/mGJihJzgkVuIeSxnAqGnessFujevnjrg==", "mutter"=>{"content"=>"mailerテスト2"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:24:02 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ShkdtDxoxuPvHCrUU3CvL3OV2IpsiahFtw6GSxBRnZgwz78/tCWeZ146a3XDhqOWnWJiBul/mqXXdO5+t140Rw==", "mutter"=>{"content"=>"mailerテスト2"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト2"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+  Rendering tweetcreate_mailer/send_email.html.erb within layouts/mailer
+  Rendered tweetcreate_mailer/send_email.html.erb within layouts/mailer (0.4ms)
+TweetcreateMailer#send_email: processed outbound mail in 17.8ms
+Sent mail to kurosirobeagle@yahoo.co.jp (4.9ms)
+Date: Fri, 27 Apr 2018 11:24:02 +0900
+From: from@example.com
+To: kurosirobeagle@yahoo.co.jp
+Message-ID: <5ae289c21d63b_14b023fcd1b0e661852878@HidekinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=81=A4=E3=81=B6=E3=82=84=E3=81=8D=E3=82=92=E6=8A=95=E7=A8=BF=E3=81=97=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgaHR0
+cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo
+YXJzZXQ9dXRmLTgiIC8+CiAgICA8c3R5bGU+CiAgICAgIC8qIEVtYWlsIHN0
+eWxlcyBuZWVkIHRvIGJlIGlubGluZSAqLwogICAgPC9zdHlsZT4KICA8L2hl
+YWQ+CgogIDxib2R5PgogICAgPGgxPuaWsOimj+aKleeov+OCkuOBl+OBvuOB
+l+OBn++8gTwvaDE+Cgo8aDQ+5Lul5LiL5a6b5YWI44Gr56K66KqN44Oh44O8
+44Or44KS6YCB5L+h44GX44G+44GX44Gf44CCPGJyPgogIOWum+WFiDoga3Vy
+b3Npcm9iZWFnbGVAeWFob28uY28uanA8L2g0PgoKCnJlZGlyZWN0X3RvIG11
+dHRlcnNfcGF0aAoKICA8L2JvZHk+CjwvaHRtbD4K
+
+Completed 302 Found in 41ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:24:02 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 120ms (Views: 113.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:26:42 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.6ms)
+  Rendered mutters/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters/confirm" for 127.0.0.1 at 2018-04-27 11:26:48 +0900
+Processing by MuttersController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7dItN9FOAQfrVZI3PIAmtpgqtIHchoAa9lJJIF+Z+d2q4U3c1s3w4fL6GywJRe66qW5btt6GKpxjdArS5OZ7Jw==", "mutter"=>{"content"=>"mailerテスト3"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/confirm.html.erb within layouts/application
+  Rendered mutters/confirm.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 57ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:26:49 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKJF/1LgW8jkEaeDr4XHYRgFmKc39TFJNHE5psnoeUwGdOd02q0DTFU35iI/c8vY9vIiK7IDA6lUC1GTbufQkw==", "mutter"=>{"content"=>"mailerテスト3"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト3"], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+  Rendering tweetcreate_mailer/send_email.html.erb within layouts/mailer
+  Rendered tweetcreate_mailer/send_email.html.erb within layouts/mailer (21.4ms)
+TweetcreateMailer#send_email: processed outbound mail in 40.8ms
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `mutter_path' for #<#<Class:0x007f9a3f192748>:0x007f9a3d7adb98>
+Did you mean?  mutter_url):
+    4:   宛先: <%= @user_email %></h4>
+    5: 
+    6: 
+    7: <%= link_to 'つぶやき一覧に戻る', mutter_path ,class: "btn btn-default" %>
+  
+app/views/tweetcreate_mailer/send_email.html.erb:7:in `_app_views_tweetcreate_mailer_send_email_html_erb__2515811516356446703_70150216577940'
+app/mailers/tweetcreate_mailer.rb:6:in `send_email'
+app/controllers/mutters_controller.rb:33:in `create'
+Started POST "/mutters" for 127.0.0.1 at 2018-04-27 11:27:40 +0900
+Processing by MuttersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKJF/1LgW8jkEaeDr4XHYRgFmKc39TFJNHE5psnoeUwGdOd02q0DTFU35iI/c8vY9vIiK7IDA6lUC1GTbufQkw==", "mutter"=>{"content"=>"mailerテスト3"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "mutters" ("content", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["content", "mailerテスト3"], ["user_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/mutters
+  Rendering tweetcreate_mailer/send_email.html.erb within layouts/mailer
+  Rendered tweetcreate_mailer/send_email.html.erb within layouts/mailer (0.4ms)
+TweetcreateMailer#send_email: processed outbound mail in 20.6ms
+Sent mail to kurosirobeagle@yahoo.co.jp (6.0ms)
+Date: Fri, 27 Apr 2018 11:27:40 +0900
+From: from@example.com
+To: kurosirobeagle@yahoo.co.jp
+Message-ID: <5ae28a9ccaabc_14b023fcd1b0e658c529d2@HidekinoMacBook-puro.local.mail>
+Subject: =?UTF-8?Q?=E3=81=A4=E3=81=B6=E3=82=84=E3=81=8D=E3=82=92=E6=8A=95=E7=A8=BF=E3=81=97=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgaHR0
+cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo
+YXJzZXQ9dXRmLTgiIC8+CiAgICA8c3R5bGU+CiAgICAgIC8qIEVtYWlsIHN0
+eWxlcyBuZWVkIHRvIGJlIGlubGluZSAqLwogICAgPC9zdHlsZT4KICA8L2hl
+YWQ+CgogIDxib2R5PgogICAgPGgxPuaWsOimj+OBpOOBtuOChOOBjeOCkuaK
+leeov+OCkuOBl+OBvuOBl+OBn++8gTwvaDE+Cgo8aDQ+5Lul5LiL5a6b5YWI
+44Gr56K66KqN44Oh44O844Or44KS6YCB5L+h44GX44G+44GX44Gf44CCPGJy
+PgogIOWum+WFiDoga3Vyb3Npcm9iZWFnbGVAeWFob28uY28uanA8L2g0PgoK
+PGEgaHJlZj0iLi4iPuODm+ODvOODoOOBq+aIu+OCizwvYT4KCiAgPC9ib2R5
+Pgo8L2h0bWw+Cg==
+
+Completed 302 Found in 38ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:27:40 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 129ms (Views: 123.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:28:23 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 78ms (Views: 63.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-27 11:29:09 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters" INNER JOIN "favorites" ON "mutters"."id" = "favorites"."mutter_id" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 49ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2018-04-27 11:29:10 +0900
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (6.8ms)
+  Rendered contacts/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 101ms (Views: 78.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/mutters" for 127.0.0.1 at 2018-04-27 11:29:14 +0900
+Processing by MuttersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/index.html.erb within layouts/application
+  [1m[36mMutter Load (0.3ms)[0m  [1m[34mSELECT "mutters".* FROM "mutters"[0m
+  Rendered mutters/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 62ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mutters/new" for 127.0.0.1 at 2018-04-27 11:29:14 +0900
+Processing by MuttersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering mutters/new.html.erb within layouts/application
+  Rendered mutters/_form.html.erb (2.8ms)
+  Rendered mutters/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 60ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+

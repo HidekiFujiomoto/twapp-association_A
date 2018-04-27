@@ -6,6 +6,9 @@ class Mutter < ApplicationRecord
     # アソシエーション設定一対多の多側
     belongs_to :user
 
+    # アソシエーション設定一対多の一側
+    has_many :users
+
     # アソシエーション設定多対多の多側
     has_many :favorites, dependent: :destroy
     has_many :favorite_users, through: :favorites, source: :user

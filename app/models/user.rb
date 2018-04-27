@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   # アソシエーション設定一対多の一側
   has_many :mutters, dependent: :destroy
+
+  # アソシエーション設定一対多の多側
+  belongs_to :mutter
+
   # アソシエーション設定多対多の多側
   has_many :favorites, dependent: :destroy
   has_many :favorites_mutters, through: :favorites, source: :mutter
