@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feeds
   resources :contacts
   root to:'tops#index'
   resources :sessions, only: [:new, :create, :destroy]

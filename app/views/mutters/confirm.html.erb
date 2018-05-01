@@ -45,6 +45,10 @@
               <div class="entry_content">
                 <%= @mutter.content %>
               </div>
+              <label>添付画像</label>
+              <div class="entry_content">
+                <%= image_tag @mutter.image %>
+              </div>
               <div class="btn-group">
                 <%= form.submit  "投稿する",class:"btn btn-default" %>
               </div>

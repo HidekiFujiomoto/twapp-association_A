@@ -32,12 +32,14 @@
           <p>以下投稿をお気に入りから解除しますか？<p>
             <br>
             <p><%= @mutter.content %></p>
+            <p><%= @mutter.image %></p>
             <br>
           <%= link_to 'お気に入り解除する', favorite_path(mutter_id: @mutter.id), method: :delete, class: 'btn btn-danger' %>
         <% else %>
           <p>以下投稿をお気に入りに登録しますか？<p>
             <br>
             <p><%= @mutter.content %></p>
+            <p><%= @mutter.image %></p>
             <br>
           <%= link_to 'お気に入りする', favorites_path(mutter_id: @mutter.id), method: :post, class: 'btn btn-primary' %>
         <% end %>

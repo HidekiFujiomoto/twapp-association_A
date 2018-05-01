@@ -30,6 +30,13 @@
           <img src="/assets/twapp_cover.jpg">
         </section>
 
+
+        <section class="preamble">
+          <h3>あなたの画像</h3><br>
+            <%= image_tag @user.image %>
+          <%= link_to "画像を編集する", edit_user_path(@user),class: "btn btn-default" %>
+        </section>
+
         <section class="preamble">
           <h3>あなたのお気に入り投稿</h3><br>
           <% @favorites_mutters.each do |favorites_tweet| %>

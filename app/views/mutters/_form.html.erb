@@ -17,6 +17,11 @@
       <%= form.label "いまどうしてる？" %><br>
       <%= form.text_field :content %>
     </div>
+    <div class="image_input">
+      <p>画像を添付する</p>
+      <%= form.file_field :image, id: :feed_image %>
+      <%= form.hidden_field :image_cache %>
+    </div>
 
     <div>
       <%= form.submit "投稿する", class:"btn btn-default "%>
