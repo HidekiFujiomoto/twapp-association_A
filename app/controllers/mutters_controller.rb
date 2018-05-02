@@ -38,7 +38,6 @@ class MuttersController < ApplicationController
   end
 
   def confirm
-    binding.pry
     @mutter = Mutter.new(mutter_params)
     @mutter.user_id = current_user.id
     render :new if @mutter.invalid?
