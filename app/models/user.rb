@@ -13,6 +13,6 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorites_mutters, through: :favorites, source: :mutter
 
-  # ImageUploaderを紐付け
+  # imageカラムにImageUploaderを紐付け
   mount_uploader :image, ImageUploader
 end

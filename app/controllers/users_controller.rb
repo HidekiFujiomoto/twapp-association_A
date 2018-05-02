@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.save
       redirect_to user_path(@user.id)
     else
@@ -19,8 +19,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(user_params)
-    redirect_to user_path
+
+    @user.password = current_user.password_digest
+    if @user.update(user_params)
+      redirect_to user_path,notice: "プロフィールを更新しました！"
+    else
+      redirect_to user_path,notice: "プロフィールを更新できませんでした！"
+    end
   end
 
   def show
@@ -31,8 +36,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password,
-                  :password_confirmation,:image,:image_cache)
+    params.require(:user).permit(:name, :email, :password,:password_confirmation,:image,:image_cache)
   end
 
   def set_user
