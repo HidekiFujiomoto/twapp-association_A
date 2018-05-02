@@ -25,8 +25,9 @@ class MuttersController < ApplicationController
 
   def create
     @mutter = Mutter.new(mutter_params)
+    @mutter.image.retrieve_from_cache!  params[:cache][:image]
     @mutter.user_id = current_user.id
-    if @mutter.save
+    if @mutter.save(mutter_params)
       redirect_to mutters_path, notice: "つぶやきを投稿しました！"
       # Mailerでユーザーへ作成完了のメッセージを送る
       @user_email = @mutter.user.email
@@ -37,15 +38,14 @@ class MuttersController < ApplicationController
   end
 
   def confirm
+    binding.pry
     @mutter = Mutter.new(mutter_params)
     @mutter.user_id = current_user.id
     render :new if @mutter.invalid?
-
   end
 
   def edit
     if logged_in?
-      @mutter = Mutter.new(mutter_params)
     else
       redirect_to new_session_path
     end

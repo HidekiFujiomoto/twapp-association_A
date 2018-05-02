@@ -48,6 +48,7 @@
               <label>添付画像</label>
               <div class="entry_content">
                 <%= image_tag @mutter.image %>
+                <%= hidden_field_tag :"cache[image]",@mutter.image.cache_name %>
               </div>
               <div class="btn-group">
                 <%= form.submit  "投稿する",class:"btn btn-default" %>
@@ -57,7 +58,7 @@
 
           <div class="return_content">
             <%= form_with(model: @mutter, url: new_mutter_path, local: true, method: 'get') do |form| %>
-              <%= form.hidden_field :content %>
+              <%= hidden_field_tag :"cache[image]",@mutter.image.cache_name %>
               <div class="btn-group">
                 <%= form.submit "もどる", name: 'back',class:"btn btn-default" %>
               </div>

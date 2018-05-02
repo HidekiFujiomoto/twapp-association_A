@@ -47,6 +47,9 @@
               <tr class="tweet_content">
                 <td><%= mutter.content %></td>
               </tr>
+              <tr class="tweet_content image_content">
+                <td><%= image_tag mutter.image %></td>
+              </tr>
               <% if mutter.user_id == @user_id %>
                 <tr class="content_buttom">
                   <td>

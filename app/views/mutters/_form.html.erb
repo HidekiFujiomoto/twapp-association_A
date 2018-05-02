@@ -19,7 +19,8 @@
     </div>
     <div class="image_input">
       <p>画像を添付する</p>
-      <%= form.file_field :image, id: :feed_image %>
+      <%= image_tag @mutter.image %>
+      <%= form.file_field :image %>
       <%= form.hidden_field :image_cache %>
     </div>
 
@@ -31,4 +32,4 @@
 
 <div class="return_index">
   <%= link_to 'つぶやき一覧画面にもどる', mutters_path %>
-</div
+</div>
